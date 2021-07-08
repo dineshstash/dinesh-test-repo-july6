@@ -8,6 +8,7 @@ jobs:
         run:
           pwd
           ls -a
+          ls 
           mkdir dieshtest
           ls -a
           echo $GITHUB_SHA
