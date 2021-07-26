@@ -1,0 +1,15 @@
+name: Cron Job 5mins Job
+on: 
+  schedule:
+    - cron: '*/5 * * * *'
+jobs:
+  run-github-actions: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files
+        run:
+          pwd
+          ls -altr
+         
+    
+          
