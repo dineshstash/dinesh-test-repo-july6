@@ -1,7 +1,10 @@
 name: Cron Job 5mins Job
 on: 
-  schedule:
-    - cron: '*/5 * * * *'
+  repository_dispatch:
+  #schedule:
+  # - cron: '*/5 * * * *'
+  pull_request:
+    types: [dinesh_build]
 jobs:
   run-github-actions: 
     runs-on: ubuntu-latest
