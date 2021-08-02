@@ -1,5 +1,13 @@
 name: Action Workflow
-on: [push, pull_request]
+on: 
+  repository_dispatch:
+  #schedule:
+  # - cron: '*/5 * * * *'
+  pull_request:
+    types: [dinesh_build]
+    steps:
+      - name: payload
+        run: echo ${{  github.event.client_payload.env  }}
 jobs:
   run-github-actions: 
     runs-on: ubuntu-latest
