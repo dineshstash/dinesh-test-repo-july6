@@ -11,7 +11,6 @@ jobs:
           pwd
           ls -a
           ls 
-          ls -altr
           mkdir dieshtest
           ls -a
           echo $GITHUB_SHA
