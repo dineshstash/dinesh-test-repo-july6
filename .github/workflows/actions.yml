@@ -12,7 +12,7 @@ jobs:
       - name: List Files
         run: |
           pwd
-          ls -a
+          ls -altr
                 
           mkdir dinesh
           echo $GITHUB_SHA
