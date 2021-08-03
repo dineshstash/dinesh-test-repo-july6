@@ -13,7 +13,6 @@ jobs:
         run: |
           pwd
           ls -altr
-                
           mkdir dinesh
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
