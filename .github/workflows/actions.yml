@@ -1,32 +1,29 @@
-name: Action Workflow
-on: [push, pull_request]
+name: Actions Workflow
+on:
+  repository_dispatch:
+    types: [build]
 jobs:
-  run-github-actions: 
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: list files
-        run:
+      - name: payload
+        run: echo "${{github.event.client_payload.env}}"
+          echo "${{github.event.client_payload.artifact}}"
+      - name: List Files
+        run: |
           pwd
-          ls -a
-          ls 
           ls -altr
-          mkdir dieshtest
-          ls -a
+          mkdir dinesh
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: list files after checkout
-        run:
-          pwd
-          ls -a
-      - name: Simple JS Action
+        uses: actions/checkout@v2.3.4
+      - name: Simple JS action
         id: greet
         uses: actions/hello-world-javascript-action@v1
-        with: 
-          who-to-greet: Sachin
-      - name: Log Greeting Time
+        with:
+          who-to-greet: Dinesh
+      - name: Log greeting time
         run: echo "${{ steps.greet.outputs.time }}"
-          

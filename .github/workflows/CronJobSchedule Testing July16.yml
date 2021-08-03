@@ -1,0 +1,16 @@
+name: Cron Job Testing Workflow July16
+on: 
+  schedule:
+    - cron: '* * * * *'
+  
+jobs:
+  run-github-actions: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: list files
+        run:
+          pwd
+          ls -altr
+         
+    
+          
